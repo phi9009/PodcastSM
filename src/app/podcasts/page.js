@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 async function getData(){
     const res = await fetch("http://localhost:3004/podcasts", { next: { revalidate: 30 } })
     if(!res.ok){
@@ -10,16 +12,18 @@ export default async function PodcastList (){
     const data = await getData();
     return(
         <>
-            <h1> List of Podcasts</h1>
+        <div className='mx-auto max-w-lg'>
+            <h1 className='text-3xl'> List of Podcasts</h1>
             <ul>
                 {data.map( (cast) => {
                     return (
                         <li key={cast.id}>
-                            {cast.title}
+                            <Link href={`/podcasts/${cast.id}`}>{cast.title}</Link>
                         </li>
                     )
                 })}
             </ul>
+        </div>
         </>
     )
 }
