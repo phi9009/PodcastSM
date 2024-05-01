@@ -1,5 +1,7 @@
 import Link from 'next/link'
+import CastCard from './cast_card';
 
+import "./podcast_list.css"
 async function getData(){
     const res = await fetch("http://localhost:3004/podcasts", { next: { revalidate: 30 } })
     if(!res.ok){
@@ -12,18 +14,19 @@ export default async function PodcastList (){
     const data = await getData();
     return(
         <>
-        <div className='mx-auto max-w-lg'>
-            <h1 className='text-3xl'> List of Podcasts</h1>
-            <ul>
-                {data.map( (cast) => {
-                    return (
-                        <li key={cast.id}>
-                            <Link href={`/podcasts/${cast.id}`}>{cast.title}</Link>
-                        </li>
-                    )
-                })}
-            </ul>
-        </div>
+        <h1 className='text-3xl p-4'> List of Podcasts</h1>
+            <div className='card-container mx-auto grid grid-cols-5 gap-3'>
+                
+                    {data.map( (cast) => {
+                        return (
+                            <>
+                                <Link href={`/podcasts/${cast.id}`}>
+                                    <CastCard key={cast.id} podcast={cast}/>
+                                </Link>
+                            </>
+                        )
+                    })}
+            </div>
         </>
     )
 }
