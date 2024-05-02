@@ -3,8 +3,8 @@
 export default function CastCard ({podcast}){
     return (
         <div className="cast-card border-2 m-5 p-2 flex">
-            <div className="p-2">
-                <div className="border-b p-2">
+            <div className="p-2 grow">
+                <div className="border-b p-2 ">
                     <h3>{podcast.title}</h3>
                 </div>
 

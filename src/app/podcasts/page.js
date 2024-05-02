@@ -15,7 +15,7 @@ export default async function PodcastList (){
     return(
         <>
         <h1 className='text-3xl p-4'> List of Podcasts</h1>
-            <div className='card-container mx-auto grid grid-cols-5 gap-3'>
+            <div className='card-container mx-auto grid grid-cols-4 gap-3'>
                 
                     {data.map( (cast) => {
                         return (
