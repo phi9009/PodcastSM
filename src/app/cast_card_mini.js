@@ -1,6 +1,6 @@
 export default function CastCardMini ({podcast}){
     return (
-        <div className="border-2 flex">
+        <div className="border-2 flex m-2">
             <div className="grow">
                 <div className="m-3 border-b">{podcast.title}</div>
                 <div className="m-3">{podcast.blurb}</div>

@@ -40,7 +40,7 @@ export default async function Page({ params }) {
                 {series.map((cast) => {
                     return(
                         <>
-                            <li>
+                            <li key={cast.id}>
                                 <Link href={`/podcasts/${parseInt(cast.id)}`}><CastCardMini podcast={cast} /></Link>
                             </li>
                         </>
