@@ -34,3 +34,9 @@ body {
 .content {
   min-height: 80vh;
 }
+
+input {
+  background-color: black;
+  color:beige;
+  border: 1px beige solid;
+}
