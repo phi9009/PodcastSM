@@ -1,6 +1,10 @@
 import Link from "next/link";
 import CastCard from "./cast_card";
 
+export const metadata = {
+    title: "Podcasts"
+  };
+
 import "./podcast_list.css";
 async function getData() {
 	const res = await fetch("http://localhost:3004/podcasts", {

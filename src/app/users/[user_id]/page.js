@@ -1,6 +1,10 @@
 import Link from 'next/link'
 import CastCardMini from '../../cast_card_mini';
 
+export const metadata = {
+    title: "User"
+  };
+
 async function getData(id){
     const res = await fetch(`http://localhost:3004/users/${id}`, { next: { revalidate: 30 } })
     if(!res.ok){

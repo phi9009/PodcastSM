@@ -17,7 +17,9 @@ async function getPodcast(id){
     }
     return res.json();
 }
-
+export const metadata = {
+    title: "Episode"
+  };
 export default async function Page({ params }) {
     const ep = await getData(params.episode_id);
     const podcast = await getPodcast(ep.series);

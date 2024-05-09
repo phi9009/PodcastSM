@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import EpCardMini from './ep_card_mini';
-
+export const metadata = {
+    title: "Podcast"
+  };
 async function getData(id){
     const res = await fetch(`http://localhost:3004/podcasts/${id}`, { next: { revalidate: 30 } })
     if(!res.ok){
